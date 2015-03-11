@@ -16,6 +16,10 @@ public class Rectangle {
 	Rectangle(Point2D downLeft, Point2D upRight) {
 		this.downLeft = downLeft;
 		this.upRight = upRight;
+		x0 = downLeft.getX();
+		y0 = downLeft.getY();
+		x1 = upRight.getX();
+		y1 = upRight.getY();
 	}
 
 	public double getWidth() {
@@ -35,10 +39,10 @@ public class Rectangle {
 	}
 
 	public void move(double x, double y) {
-		x0 = x0 + x;
-		x1 = x1 + x;
-		y0 = y0 + y;
-		y1 = y1 + y;
+		x0 += x;
+		x1 += x;
+		y0 += y;
+		y1 += y;
 	}
 
 	public Rectangle union(Rectangle rec) {
@@ -59,17 +63,34 @@ public class Rectangle {
 	}
 
 	public Rectangle intersection(Rectangle rec) {
-
+		Rectangle resultat = new Rectangle(rec.x0, rec.x1, rec.y0, rec.y1);
+		if (x0 > rec.x0) {
+			resultat.x0 = x0;
+		}
+		if (x1 < rec.x1) {
+			resultat.x1 = x1;
+		}
+		if (y0 > rec.y0) {
+			resultat.y0 = y0;
+		}
+		if (y1 < rec.y1) {
+			resultat.y1 = y1;
+		}
+		return resultat;
 	}
 
 	@Override
 	public String toString() {
-		return "";
+		return "Rectangle [" + x0 + ", " + y0 + "], [" + x1 + ", " + y1 + "]";
 	}
 
 	@Override
-	public boolean equals(Rectangle rec) {
-
+	public boolean equals(Object ob) {
+		Rectangle rec = (Rectangle) ob;
+		if (rec.x0 == x0 && rec.y1 == y1) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-
 }
