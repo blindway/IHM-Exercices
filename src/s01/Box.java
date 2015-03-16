@@ -1,23 +1,27 @@
 package s01;
 
 import javafx.geometry.Point2D;
+import javafx.scene.paint.Color;
 
-public class Box extends Rectangle {
+public class Box extends Rectangle implements Colorable {
 	private double epaisseur;
 	private LineType typeLigne;
+	private Color couleur;
 
 	public Box(double x0, double y0, double x1, double y1, double epaisseur,
-			LineType typeLigne) {
+			LineType typeLigne, Color couleur) {
 		super(x0, y0, x1, y1);
 		this.epaisseur = epaisseur;
 		this.typeLigne = typeLigne;
+		this.couleur = couleur;
 	}
 
 	public Box(Point2D downLeft, Point2D upRight, double epaisseur,
-			LineType typeLigne) {
+			LineType typeLigne, Color couleur) {
 		super(downLeft, upRight);
 		this.epaisseur = epaisseur;
 		this.typeLigne = typeLigne;
+		this.couleur = couleur;
 	}
 
 	public double getEpaisseur() {
@@ -55,8 +59,8 @@ public class Box extends Rectangle {
 	@Override
 	public String toString() {
 		return "Box [" + getX0() + ", " + getY0() + "], [" + getX1() + ", "
-				+ getY1() + "]" + " d[Epaisseur:" + epaisseur + "] " + "[type:"
-				+ typeLigne.toString() + "]";
+				+ getY1() + "]" + " [Epaisseur:" + epaisseur + "] " + "[type:"
+				+ typeLigne.toString() + "]" + " [Couleur:" + couleur + "]";
 	}
 
 	@Override
@@ -68,6 +72,23 @@ public class Box extends Rectangle {
 			return true;
 		} else {
 			return false;
+		}
+	}
+
+	@Override
+	public void paint(Color color) {
+		this.couleur = color;
+	}
+
+	@Override
+	public Color whatColor() {
+		return couleur;
+	}
+
+	@Override
+	public void inverseColor() {
+		if (couleur != null) {
+			couleur.invert();
 		}
 	}
 }

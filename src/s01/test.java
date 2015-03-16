@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 
 public class test {
   public static void main(String[] args) {
@@ -16,15 +17,15 @@ public class test {
     contacts.add("");
     contacts.add("123");
 
-    Email mail = new Email("Adriano", contacts, "Salut ça va?");
+    Email mail = new Email("Adriano", contacts, "Salut ça va?", Color.RED);
 
     mailBox.send(mail);
 
-    Sms sms = new Sms("Alex", contacts, "Oui et vous?");
+    Sms sms = new Sms("Alex", contacts, "Oui et vous?", Color.BLUE);
     mailBox.send(sms);
 
     Image image = new Image("http://bit.ly/1zkQXI1");
-    Mms mms = new Mms("Pirlet", contacts, "eheheh", image);
+    Mms mms = new Mms("Pirlet", contacts, "eheheh", image, Color.GREEN);
     mailBox.send(mms);
 
     mailBox.receive();

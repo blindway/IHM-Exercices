@@ -1,6 +1,7 @@
 package s01;
 
 import javafx.geometry.Point2D;
+import javafx.scene.paint.Color;
 
 public class RectangleTest {
 	public static void main(String[] args) {
@@ -10,9 +11,9 @@ public class RectangleTest {
 		Point2D point = new Point2D(5, 7);
 		Rectangle intersec = rec1.intersection(rec2);
 		Rectangle uni = rec1.union(rec2);
-		Box box1 = new Box(0, 0, 2, 2, 1.0, LineType.DASHED);
-		Box box2 = new Box(0, 0, 2, 2, 1.0, LineType.DASHED);
-		Box box3 = new Box(1, 1, 3, 3, 2.0, LineType.PLAIN);
+		Box box1 = new Box(0, 0, 2, 2, 1.0, LineType.DASHED, Color.RED);
+		Box box2 = new Box(0, 0, 2, 2, 1.0, LineType.DASHED, Color.BLUE);
+		Box box3 = new Box(1, 1, 3, 3, 2.0, LineType.PLAIN, Color.GREEN);
 
 		boolean resultat = true;
 		if (!rec1.equals(rec3))

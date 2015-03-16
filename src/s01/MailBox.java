@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 
 public class MailBox {
 
@@ -20,9 +21,9 @@ public class MailBox {
     int nbr;
 
     contacts.add("Adriano");
-    Email mail = new Email("Alex", contacts, "Travail prog");
-    Sms sms = new Sms("Jean", contacts, "Go manger?");
-    Mms mms = new Mms("Carla", contacts, "Photooo", image);
+    Email mail = new Email("Alex", contacts, "Travail prog", Color.BLACK);
+    Sms sms = new Sms("Jean", contacts, "Go manger?", Color.YELLOW);
+    Mms mms = new Mms("Carla", contacts, "Photooo", image, Color.WHITE);
 
     Random rdm = new Random();
     nbr = rdm.nextInt(100);

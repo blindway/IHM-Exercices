@@ -2,26 +2,37 @@ package s01;
 
 import java.util.ArrayList;
 
-public abstract class Message {
+import javafx.scene.paint.Color;
 
-  private String            sender;
-  private ArrayList<String> recipients;
+public abstract class Message implements Colorable {
 
-  public Message(String sender, ArrayList<String> recipients) {
-    this.sender = sender;
-    this.recipients = recipients;
-  }
+	private String sender;
+	private ArrayList<String> recipients;
+	private Color couleur;
 
-  public abstract void display();
+	public Message(String sender, ArrayList<String> recipients, Color couleur) {
+		this.sender = sender;
+		this.recipients = recipients;
+		this.couleur = couleur;
+	}
 
-  public String getSender() {
-    return sender;
-  }
+	public abstract void display();
 
-  public ArrayList<String> getRecipients() {
-    return recipients;
-  }
-  
-  public abstract String getType();
+	public String getSender() {
+		return sender;
+	}
 
+	public ArrayList<String> getRecipients() {
+		return recipients;
+	}
+
+	public abstract String getType();
+
+	public Color getColor() {
+		return couleur;
+	}
+
+	public void setColor(Color color) {
+		this.couleur = color;
+	}
 }
