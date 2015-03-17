@@ -1,17 +1,18 @@
 package s01File;
 
 import java.io.File;
+import java.io.FilenameFilter;
 
 public class TestFiles {
 	public static void main(String[] args) {
 
-		//11
+		// 11
 		// fichier existant
 		File e = new File("test.txt");
 		// fichier inéxistant
 		File i = new File("inconnu.txt");
 		// répertoire
-		File d = new File("srt");
+		File d = new File("src");
 
 		// test fichier éxistant
 		System.out.println("Chemin absolu : " + e.getAbsolutePath());
@@ -40,9 +41,7 @@ public class TestFiles {
 		System.out.println("Taille ? " + d.getTotalSpace() + " bytes");
 		System.out.println();
 
-		
-		
-		//12
+		// 12
 		System.out.println("Contenu du répertoire " + d);
 		String[] paths;
 		try {
@@ -54,6 +53,33 @@ public class TestFiles {
 			}
 		} catch (Exception t) {
 			t.printStackTrace();
+		}
+		System.out.println();
+
+		// 13
+		// Classe anonyme avec un filtre
+		String[] fileListFilter = d.list(new FilenameFilter() {
+			public boolean accept(File dir, String s) {
+				return s.endsWith(".txt");
+			}
+		});
+
+		// lambda
+		String[] fileListLambda = d.list((File dir, String s) -> {
+			return s.endsWith(".jpg");
+		});
+
+		System.out.println("Répertoire trié avec '. txt' : ");
+
+		for (int t = 0; t < fileListFilter.length; t++) {
+			System.out.println(fileListFilter[t]);
+		}
+
+		System.out.println("Répertoire trié avec '. jpg' : ");
+		for (int r = 0; r < fileListLambda.length; r++) {
+
+			System.out.println(fileListLambda[r]);
+
 		}
 
 	}
