@@ -6,7 +6,7 @@ import javafx.embed.swing.JFXPanel;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
-public class test {
+public class TestMailbox {
   public static void main(String[] args) {
     new JFXPanel();
     MailBox mailBox = new MailBox();
