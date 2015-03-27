@@ -7,6 +7,8 @@ public class MdlMineHunt implements IMineHuntModel{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
 
 	@Override
 	public int gridWidth() {
