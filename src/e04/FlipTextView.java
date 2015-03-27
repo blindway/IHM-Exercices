@@ -20,8 +20,8 @@ import javafx.stage.Stage;
 
 public class FlipTextView extends Application {
 
-	private static final String TITLE = "/ressources/FlipText_Title.png";
-	private static final String ICON = "/ressources/Blue_Right_Arrow.png";
+	private static final String TITLE = "e04/ressources/FlipText_Title.png";
+	private static final String ICON = "e04/ressources/Blue_Right_Arrow.png";
 
 	private VBox root = new VBox(30);
 	private HBox b2 = new HBox(5);
