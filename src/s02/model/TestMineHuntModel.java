@@ -1,9 +1,15 @@
 package s02.model;
 
-public class TestMineHuntModel {
-	public static void main(String[] args) {
+import javafx.application.Application;
+import s02.view.MineHuntView;
 
+public class TestMineHuntModel {
+	
+	public static void main(String[] args) {
 		
-		//salut
+		Application.launch(MineHuntView.class,args);
+		
 	}
+
+	
 }
