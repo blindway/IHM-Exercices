@@ -1,9 +1,9 @@
 package s02.model;
 
 public class Case {
-	boolean containMine;
-	boolean flag;
-	boolean opened;
+	private boolean containMine;
+	private boolean flag;
+	private boolean opened;
 
 	public Case(boolean containMine, boolean flag, boolean opened) {
 		this.containMine = containMine;
@@ -15,7 +15,7 @@ public class Case {
 		return containMine;
 	}
 
-	public void setContainMine(boolean containMine) {
+	public void setMine(boolean containMine) {
 		this.containMine = containMine;
 	}
 
