@@ -45,9 +45,9 @@ public class MineHuntView extends Application {
 				// btn.setrouge();
 				btn.setOnMouseClicked(event -> {
 					if (event.getButton() == MouseButton.PRIMARY) {
-						leftClickAction(i , j);
+						// leftClickAction(i , j);
 					} else if (event.getButton() == MouseButton.SECONDARY) {
-						rightClickAction(i , j);
+						// rightClickAction(i , j);
 					}
 				});
 
