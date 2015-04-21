@@ -34,14 +34,14 @@ public class MineHuntModel implements IMineHuntModel {
 	private int[] randomMineOK() {
 		String[] tab = new String[2];
 		int[] tabResultat = new int[2];
-		boolean res = false;
+		boolean res = true;
 
 		while (res) {
 			tab = randomizeMine().split(";");
 			int rawi = Integer.valueOf(tab[0]);
 			int coli = Integer.valueOf(tab[1]);
 			if (!grid[rawi][coli].getContainMine()) {
-				res = true;
+				res = false;
 				tabResultat[0] = rawi;
 				tabResultat[1] = coli;
 			}
