@@ -8,6 +8,7 @@ public class MineHuntModel implements IMineHuntModel {
 	int gridcol;
 	int mines;
 	int errors;
+	int leftToOpen;
 	Case[][] grid;
 	Random random;
 
@@ -48,12 +49,23 @@ public class MineHuntModel implements IMineHuntModel {
 		return tabResultat;
 	}
 
+	// Teste si la case contient une mine, si oui elle incrémente les erreurs et
+	// retourne true.
+	public boolean isMine(int row, int col) {
+		boolean resultat = false;
+		if (grid[row - 1][col - 1].getContainMine()) {
+			errors++;
+			resultat = true;
+		}
+		return resultat;
+	}
+
 	// Initialise une nouvelle partie, en créant la grille et en posant des
 	// mines aléatoirement.
 	@Override
 	public void initNewGame(int minesNb) {
 		int tab[] = new int[2];
-		grid = new Case[gridraw - 1][gridcol - 1];
+		grid = new Case[gridraw][gridcol];
 		for (int i = 0; i < grid.length; i++) {
 			for (int j = 0; j < grid[0].length; j++) {
 				grid[i][j] = new Case(false, false, false);
@@ -63,6 +75,7 @@ public class MineHuntModel implements IMineHuntModel {
 			tab = randomMineOK();
 			grid[tab[0]][tab[1]].setMine(true);
 		}
+		leftToOpen = (gridraw * gridcol) - mines;
 	}
 
 	// Retourne le nombre de colonnes.
@@ -90,10 +103,141 @@ public class MineHuntModel implements IMineHuntModel {
 	}
 
 	// Retourne le nombre de mines voisine de la case à l'emplacement donné.
+	// parametre row va de 1 à rowMax, idem pour col.
 	@Override
 	public int neighborMines(int row, int col) {
-		// TODO Auto-generated method stub
-		return 0;
+		int neighborMines = 0;
+		if (row - 1 == 0 && col - 1 == 0) {
+			if (grid[row][col - 1].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 1][col].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row][col].getContainMine()) {
+				neighborMines++;
+			}
+		} else if (row - 1 > 0 && col - 1 == 0) {
+			if (grid[row - 2][col - 1].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 2][col].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 1][col].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row][col].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row][col - 1].getContainMine()) {
+				neighborMines++;
+			}
+		} else if (row - 1 == gridraw - 1 && col - 1 == 0) {
+			if (grid[row - 2][col - 1].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 2][col].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 1][col].getContainMine()) {
+				neighborMines++;
+			}
+		} else if (row - 1 == gridraw - 1 && col - 1 > 0) {
+			if (grid[row - 1][col - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 2][col - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 2][col - 1].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 2][col].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 1][col].getContainMine()) {
+				neighborMines++;
+			}
+		} else if (row - 1 == gridraw - 1 && col - 1 == gridcol - 1) {
+			if (grid[gridraw - 1][gridcol - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[gridraw - 2][gridcol - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[gridraw - 2][gridcol - 1].getContainMine()) {
+				neighborMines++;
+			}
+		} else if (row - 1 > 0 && col - 1 == gridcol - 1) {
+			if (grid[row - 2][col - 1].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 2][col - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 1][col - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row][col - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row][col - 1].getContainMine()) {
+				neighborMines++;
+			}
+		} else if (row - 1 == 0 && col - 1 == gridcol - 1) {
+			if (grid[row - 1][gridcol - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row][gridcol - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row][gridcol - 1].getContainMine()) {
+				neighborMines++;
+			}
+		} else if (row - 1 == 0 && col - 1 > 0) {
+			if (grid[row - 1][col - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row][col - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row][col - 1].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row][col].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 1][col].getContainMine()) {
+				neighborMines++;
+			}
+		} else if (row - 1 > 0 && col - 1 > 0) {
+			if (grid[row - 2][col - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 2][col - -1].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 2][col].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 1][col - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row - 1][col].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row][col - 2].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row][col - 1].getContainMine()) {
+				neighborMines++;
+			}
+			if (grid[row][col].getContainMine()) {
+				neighborMines++;
+			}
+		}
+		return neighborMines;
 	}
 
 	// Dit si une case à l'emplacement donné est ouverte.
@@ -108,9 +252,11 @@ public class MineHuntModel implements IMineHuntModel {
 		return grid[row - 1][col - 1].isFlagged();
 	}
 
+	// Teste si le jeu est terminé.
 	@Override
 	public boolean isGameOver() {
-		// TODO Auto-generated method stub
+		if (leftToOpen == 0)
+			return true;
 		return false;
 	}
 
@@ -120,6 +266,7 @@ public class MineHuntModel implements IMineHuntModel {
 		boolean resultat = false;
 		if (!grid[row - 1][col - 1].isOpened()) {
 			grid[row - 1][col - 1].setOpened(true);
+			leftToOpen--;
 			resultat = true;
 		}
 		return resultat;
