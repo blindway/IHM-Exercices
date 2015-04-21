@@ -6,8 +6,7 @@ import javafx.scene.control.Button;
 
 public class CellButton extends Button{
 	
-	int x;
-	int y;
+	private int x, y;
 	
 	this.setStyle("-fx-background-color: grey;");
 	
