@@ -1,6 +1,8 @@
 package s02.view;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -27,47 +29,28 @@ public class MineHuntView extends Application {
 
 	// Bottom buttons
 	Button mines = new Button("Show Mines");
-	Button button = new Button("New Game");
+	Button newgame = new Button("New Game");
 
 	// Labels
 	Label title = new Label("MINEHUNT");
 	Label click = new Label("NB Clicks: ");
-	Label error = new Label("NB Clicks: ");
-
-	// Create the grid by the parameters
-	public void createGrid(int x, int y) {
-
-		for (int i = 0; i < x; i++) {
-			for (int j = 0; j < y; j++) {
-				// By the specification CellButton
-				CellButton btn = new CellButton(i, j);
-				btn.setMinSize(30, 30);
-				// btn.setrouge();
-				btn.setOnMouseClicked(event -> {
-					if (event.getButton() == MouseButton.PRIMARY) {
-						// leftClickAction(i , j);
-					} else if (event.getButton() == MouseButton.SECONDARY) {
-						// rightClickAction(i , j);
-					}
-				});
-
-				grid.add(btn, i, j);
-			}
-		}
-
-	}
-
-	private void leftClickAction(int i, int j) {
-
-	}
-
-	private void rightClickAction(int i, int j) {
-	
-	
-	
-	}
+	Label error = new Label("NB Errors: ");
 
 	public void start(Stage mainStage) throws Exception {
+
+		// events
+		mines.setOnMouseClicked(ActionEvent -> {
+
+			showMines();
+
+		});
+
+		// events
+		newgame.setOnMouseClicked(ActionEvent -> {
+
+			// réinitialise le jeu
+			// init new game
+		});
 
 		// Stage
 		mainStage.setTitle("MineHunt App");
@@ -111,12 +94,56 @@ public class MineHuntView extends Application {
 		hinfo.getChildren().add(click);
 		hinfo.getChildren().add(error);
 		hbutton.getChildren().add(mines);
-		hbutton.getChildren().add(button);
+		hbutton.getChildren().add(newgame);
 		vgrid.getChildren().add(grid);
 
 		// boeuf
 		mainStage.setScene(new Scene(root));
 		mainStage.show();
+	}
+
+	// Create the grid by the parameters
+	public void createGrid(int x, int y) {
+
+		for (int i = 0; i < x; i++) {
+			for (int j = 0; j < y; j++) {
+				// By the specification CellButton
+				CellButton btn = new CellButton(i, j);
+				btn.setMinSize(30, 30);
+				// btn.setrouge();
+				btn.setOnMouseClicked(event -> {
+					if (event.getButton() == MouseButton.PRIMARY) {
+						//leftClickAction(i, j); //wtfff
+					} else if (event.getButton() == MouseButton.SECONDARY) {
+						//rightClickAction(i, j);
+					}
+				});
+
+				grid.add(btn, i, j);
+			}
+		}
+
+	}
+
+	//Click gauche sur une case
+	public void leftClickAction(int i, int j) {
+
+		// si un flag est présent, enlève le flag de la case
+		// sinon, met un flag sur la case
+	}
+
+	//Click droit sur une case
+	public void rightClickAction(int i, int j) {
+
+		// si une mine est présente...
+
+		// si rien n'est présent
+
+	}
+
+	// Affiche l'emplacement des mines
+	private void showMines() {
+
 	}
 
 }

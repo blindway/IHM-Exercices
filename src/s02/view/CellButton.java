@@ -7,6 +7,7 @@ public class CellButton extends Button{
 	int x;
 	int y;
 	
+	
 	public CellButton(int x, int y) {
 		this.x = x;
 		this.y = y;
@@ -24,9 +25,9 @@ public class CellButton extends Button{
 		
 	}
 	
-	public void setrouge(){
+	public void setflag(){
 		
-		this.setStyle("-fx-background-color: red");
+		//this.setBackgroundResource(.ressources.new_todo_image);
 		
 	}
 }
