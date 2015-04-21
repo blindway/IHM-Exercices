@@ -153,9 +153,11 @@ public class MineHuntView extends Application {
 	public void leftClickAction(int i, int j) {
 		boolean mine = ctrl.open(i, j);
 		if (mine) {
-			//methode affiche mine sur la case et met à jour le label errors.
+			// methode affiche mine sur la case et met à jour le label errors.
 		} else {
-			//methode affiche bouton cliqué sans rien.
+			int minesNeighbor = ctrl.showNeighborMines(i, j);
+			// methode affiche bouton cliqué avec le nombre de mines voisines ou
+			// sans rien si aucune mines.
 		}
 	}
 
@@ -165,8 +167,10 @@ public class MineHuntView extends Application {
 	public void rightClickAction(int i, int j) {
 		if (ctrl.containFlag(i, j)) {
 			ctrl.setFlag(i, j, false);
+			// methode qui enleve l'image du flag du bouton.
 		} else {
 			ctrl.setFlag(i, j, true);
+			// Methode qui met l'image du flag sur le bouton.
 		}
 	}
 
@@ -174,6 +178,11 @@ public class MineHuntView extends Application {
 	private void showMines() {
 
 		// xxx
+	}
+
+	public void gameOver() {
+		// bloque tous les boutons et affiche une alerte indiquant que le jeu
+		// est terminé.
 	}
 
 }
