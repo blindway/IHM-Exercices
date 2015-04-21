@@ -1,11 +1,15 @@
 package s02.view;
 
+import com.sun.prism.paint.Color;
+
 import javafx.scene.control.Button;
 
 public class CellButton extends Button{
 	
 	int x;
 	int y;
+	
+	this.setStyle("-fx-background-color: grey;");
 	
 	
 	public CellButton(int x, int y) {
@@ -21,13 +25,4 @@ public class CellButton extends Button{
 		return this.y;
 	}
 	
-	public void setflag(boolean isFlagged){
-		
-	}
-	
-	public void setflag(){
-		
-		//this.setBackgroundResource(.ressources.new_todo_image);
-		
-	}
 }

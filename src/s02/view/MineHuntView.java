@@ -24,6 +24,10 @@ public class MineHuntView extends Application {
 	private HBox herror = new HBox(30);
 	private HBox hbutton = new HBox(30);
 
+	// Position des cases
+	int px = 0;
+	int py = 0;
+
 	// GridPane
 	private GridPane grid = new GridPane();
 
@@ -38,14 +42,14 @@ public class MineHuntView extends Application {
 
 	public void start(Stage mainStage) throws Exception {
 
-		// events
+		// events sur le bouton pour afficher les mines
 		mines.setOnMouseClicked(ActionEvent -> {
 
 			showMines();
 
 		});
 
-		// events
+		// events sur le bouton pour réinitialiser le jeu
 		newgame.setOnMouseClicked(ActionEvent -> {
 
 			// réinitialise le jeu
@@ -97,7 +101,7 @@ public class MineHuntView extends Application {
 		hbutton.getChildren().add(newgame);
 		vgrid.getChildren().add(grid);
 
-		// boeuf
+		// show
 		mainStage.setScene(new Scene(root));
 		mainStage.show();
 	}
@@ -105,6 +109,7 @@ public class MineHuntView extends Application {
 	// Create the grid by the parameters
 	public void createGrid(int x, int y) {
 
+		// Parcourt selon la taille
 		for (int i = 0; i < x; i++) {
 			for (int j = 0; j < y; j++) {
 				// By the specification CellButton
@@ -113,37 +118,53 @@ public class MineHuntView extends Application {
 				// btn.setrouge();
 				btn.setOnMouseClicked(event -> {
 					if (event.getButton() == MouseButton.PRIMARY) {
-						//leftClickAction(i, j); //wtfff
+						// Click gauche
+						leftClickAction(px, py);
 					} else if (event.getButton() == MouseButton.SECONDARY) {
-						//rightClickAction(i, j);
+						// Click droit
+						rightClickAction(px, py);
 					}
 				});
-
+				// Création de la grille de bouton
 				grid.add(btn, i, j);
+				// Incrément position y
+				py++;
 			}
+			// Incrémente position x
+			px++;
 		}
 
 	}
 
-	//Click gauche sur une case
+	// Click gauche sur une case
+	// si un flag est présent, enlève le flag de la case
+	// sinon, met un flag sur la case
 	public void leftClickAction(int i, int j) {
 
-		// si un flag est présent, enlève le flag de la case
-		// sinon, met un flag sur la case
+		if (containFlag(i, j)) {
+			deleteFlag(i, j);
+		} else {
+			setFlag(i, j);
+		}
 	}
 
-	//Click droit sur une case
+	// Click droit sur une case
+	// si une mine est présent --> ajoute une erreur
+	// sinon, affiches les mines voisines
 	public void rightClickAction(int i, int j) {
 
-		// si une mine est présente...
-
-		// si rien n'est présent
+		if (containMine(i, j)) {
+			addError();
+		} else {
+			showNeighborMines(i, j);
+		}
 
 	}
 
 	// Affiche l'emplacement des mines
 	private void showMines() {
 
+		// xxx
 	}
 
 }
