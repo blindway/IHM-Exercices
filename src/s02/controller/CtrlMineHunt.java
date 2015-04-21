@@ -14,9 +14,14 @@ public class CtrlMineHunt {
 		model = new MineHuntModel(10, 10, 10);
 	}
 
-	// Insère le flag (coleur bleue)
-	public void setFlag(int x, int y) {
+	// Ouvre une case, retourne true si la case contient une mine et false si la case
+	// est vide.
+	public boolean open(int x, int y) {
+		return model.open(x, y);
+	}
 
+	// Insère le flag (coleur bleue)
+	public void setFlag(int x, int y, boolean isflagged) {
 		final String STYLE_PRESSED = "-fx-background-color: blue;";
 		this.setStyle(STYLE_PRESSED);
 	}
@@ -33,18 +38,8 @@ public class CtrlMineHunt {
 		return isMined(x, y);
 	}
 
-	// Supprime le flag (couleur grise par défaut)
-	public void deleteFlag(int x, int y) {
-
-		final String STYLE_PRESSED = "-fx-background-color: grey;";
-		this.setStyle(STYLE_PRESSED);
-
-	}
-
 	// Retourne le nombre d'erreurs
 	public void GetErrors() {
-
-		//
 
 	}
 

@@ -151,11 +151,11 @@ public class MineHuntView extends Application {
 	// si un flag est prÃ©sent, enlÃ¨ve le flag de la case
 	// sinon, met un flag sur la case
 	public void leftClickAction(int i, int j) {
-
-		if (containFlag(i, j)) {
-			deleteFlag(i, j);
+		boolean mine = ctrl.open(i, j);
+		if (mine) {
+			//methode affiche mine sur la case et met à jour le label errors.
 		} else {
-			setFlag(i, j);
+			//methode affiche bouton cliqué sans rien.
 		}
 	}
 
@@ -163,13 +163,11 @@ public class MineHuntView extends Application {
 	// si une mine est prÃ©sent --> ajoute une erreur
 	// sinon, affiches les mines voisines
 	public void rightClickAction(int i, int j) {
-
-		if (containMine(i, j)) {
-			addError();
+		if (ctrl.containFlag(i, j)) {
+			ctrl.setFlag(i, j, false);
 		} else {
-			showNeighborMines(i, j);
+			ctrl.setFlag(i, j, true);
 		}
-
 	}
 
 	// Affiche l'emplacement des mines
