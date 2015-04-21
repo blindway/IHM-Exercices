@@ -1,5 +1,6 @@
 package s02.view;
 
+import s02.controller.CtrlMineHunt;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -39,6 +40,12 @@ public class MineHuntView extends Application {
 	Label title = new Label("MINEHUNT");
 	Label click = new Label("NB Clicks: ");
 	Label error = new Label("NB Errors: ");
+
+	private CtrlMineHunt ctrl;
+
+	public MineHuntView() {
+		ctrl = new CtrlMineHunt(this);
+	}
 
 	public void start(Stage mainStage) throws Exception {
 
@@ -104,6 +111,10 @@ public class MineHuntView extends Application {
 		// show
 		mainStage.setScene(new Scene(root));
 		mainStage.show();
+	}
+
+	public void setCtrl(CtrlMineHunt ctrl) {
+		this.ctrl = ctrl;
 	}
 
 	// Create the grid by the parameters
