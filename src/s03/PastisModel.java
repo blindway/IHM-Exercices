@@ -28,8 +28,7 @@ public class PastisModel implements IPastisModel {
 
 	@Override
 	public boolean withUcLetters() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override

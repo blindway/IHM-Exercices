@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.GridPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="503.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="503.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s03.PastisControler">
    <center>
       <GridPane alignment="CENTER" maxHeight="315.0" maxWidth="289.0" prefHeight="315.0" prefWidth="289.0" BorderPane.alignment="TOP_CENTER">
         <columnConstraints>
@@ -34,7 +34,7 @@
             <Label prefHeight="16.0" prefWidth="174.0" text="Chiffres" GridPane.rowIndex="3" />
             <Label prefHeight="16.0" prefWidth="174.0" text="Lettres minuscules" GridPane.rowIndex="2" />
             <Label prefHeight="16.0" prefWidth="174.0" text="Caractères ambigus" GridPane.rowIndex="6" />
-            <CheckBox alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <CheckBox id="c_maj" fx:id="c_maj" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#handleCheckBoxAction" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <TextField maxWidth="40.0" prefHeight="26.0" prefWidth="28.0" text="12" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
             <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
             <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
@@ -64,7 +64,7 @@
       </TextField>
    </bottom>
    <top>
-      <ImageView cache="true" cacheHint="ROTATE" depthTest="DISABLE" fitHeight="91.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView cache="true" cacheHint="ROTATE" depthTest="DISABLE" fitHeight="69.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
             <Image url="@../../../../../Desktop/coollogo_com-63691932.gif" />
          </image>
