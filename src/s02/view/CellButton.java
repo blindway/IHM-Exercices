@@ -6,10 +6,15 @@ import javafx.scene.control.Button;
 
 public class CellButton extends Button{
 	
+<<<<<<< Updated upstream
 	private int x, y;
 	
 	this.setStyle("-fx-background-color: grey;");
 	
+=======
+	int x;
+	int y;	
+>>>>>>> Stashed changes
 	
 	public CellButton(int x, int y) {
 		this.x = x;
