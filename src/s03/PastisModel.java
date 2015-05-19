@@ -23,14 +23,18 @@ public class PastisModel implements IPastisModel {
 
 	// Constructeur
 	public PastisModel() {
-
 	}
 
 	public String getNewPassword() {
-		chars = new char [26];
+		int count = 0;
+		// recoit la longueur du mdp
+		length = pwLength();
+
+		chars = new char[length * 4];
 		// si minuscules
 		if (withLcLetters()) {
 			chars = getLcLetters().toCharArray();
+			count = 26;
 		}
 
 		// si majuscules
@@ -38,6 +42,7 @@ public class PastisModel implements IPastisModel {
 			String strtemp = getUcLetters();
 			for (int i = 0; i < chars.length; i++) {
 				strtemp += chars[i];
+				count++;
 			}
 			char[] temp = strtemp.toCharArray();
 			chars = temp;
@@ -48,6 +53,7 @@ public class PastisModel implements IPastisModel {
 			String strtemp = getDigits();
 			for (int i = 0; i < chars.length; i++) {
 				strtemp += chars[i];
+				count++;
 			}
 			char[] temp = strtemp.toCharArray();
 			chars = temp;
@@ -58,21 +64,31 @@ public class PastisModel implements IPastisModel {
 			String strtemp = getSymbols();
 			for (int i = 0; i < chars.length; i++) {
 				strtemp += chars[i];
+				count++;
 			}
 			char[] temp = strtemp.toCharArray();
 			chars = temp;
 		}
 
-		// recoit la longueur du mdp
-		length = pwLength();
-
 		// creation du mdp
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < length; i++) {
+			char x = '\0';
+			while (x == '\0') {
+				x = chars[r.nextInt(chars.length)];
+			}
 			char c = chars[r.nextInt(length)];
-			sb.append(c);
+			sb.append(x);
 		}
 		mdp = sb.toString();
+
+		// si caracteres ambigus
+		if (isUnambiguous()) {
+			if (mdp.contains("i") || mdp.contains("I") || mdp.contains("l")
+					|| mdp.contains("0") || mdp.contains("O")) {
+				mdp = getNewPassword();
+			}
+		}
 
 		// insertion dans le clipboard
 		final Clipboard clipboard = Clipboard.getSystemClipboard();
