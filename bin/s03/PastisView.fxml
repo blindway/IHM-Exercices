@@ -27,9 +27,9 @@
             <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="49.13983154296875" valignment="CENTER" vgrow="ALWAYS" />
         </rowConstraints>
          <children>
-            <Label prefHeight="16.0" prefWidth="174.0" text="Longueur du mot de passe" />
+            <Label prefHeight="21.0" prefWidth="186.0" text="Longueur du mot de passe" />
             <Label prefHeight="16.0" prefWidth="174.0" text="Lettres majuscules" GridPane.rowIndex="1" />
-            <Label prefHeight="16.0" prefWidth="174.0" text="Prononcable" GridPane.rowIndex="5" />
+            <Label prefHeight="16.0" prefWidth="174.0" text="Prononçable" GridPane.rowIndex="5" />
             <Label prefHeight="16.0" prefWidth="174.0" text="Caractères spéciaux" GridPane.rowIndex="4" />
             <Label prefHeight="16.0" prefWidth="174.0" text="Chiffres" GridPane.rowIndex="3" />
             <Label prefHeight="16.0" prefWidth="174.0" text="Lettres minuscules" GridPane.rowIndex="2" />
@@ -41,6 +41,8 @@
             <CheckBox fx:id="charSpec" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
             <CheckBox fx:id="chiffres" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
             <CheckBox fx:id="minuscules" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <ProgressBar fx:id="robust" prefWidth="200.0" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Robustesse" GridPane.rowIndex="7" />
          </children>
          <BorderPane.margin>
             <Insets top="20.0" />
@@ -59,6 +61,9 @@
          <BorderPane.margin>
             <Insets bottom="30.0" />
          </BorderPane.margin>
+         <tooltip>
+            <Tooltip fx:id="tooltip" text="Empty Tooltip" />
+         </tooltip>
       </TextField>
    </bottom>
    <top>
