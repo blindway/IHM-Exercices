@@ -23,7 +23,7 @@ public class PastisView extends Application {
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		primaryStage.setTitle("Boeuf");
+		primaryStage.setTitle("Password Generator");
 	}
 
 	public static void main(String[] args) {

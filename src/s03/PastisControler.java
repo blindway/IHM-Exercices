@@ -1,44 +1,43 @@
 package s03;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.application.Platform;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
 public class PastisControler {
-	
+
 	PastisModel mdl = new PastisModel();
-	
-/*	@FXML
-	private TextField f_long;
-	
-*/	
-	@FXML
-	public CheckBox c_maj;	
 
 	@FXML
-	public boolean handleCheckBoxAction() {
-		
-		//mdl.setU(true);
-		
+	private TextField longueur;
+	@FXML
+	private CheckBox majuscules;
+	@FXML
+	private CheckBox minuscules;
+	@FXML
+	private CheckBox chiffres;
+	@FXML
+	private CheckBox charSpec;
+	@FXML
+	private CheckBox pronon;
+	@FXML
+	private CheckBox charAmbigus;
+	@FXML
+	private Button generate;
+	@FXML
+	private TextField password;
+
+	@FXML
+	public void handleGenerateButton() {
+		mdl.setLength(Integer.valueOf(longueur.getText()));
+		mdl.setLcLetters(minuscules.isSelected());
+		mdl.setUcLetters(majuscules.isSelected());
+		mdl.setDigits(chiffres.isSelected());
+		mdl.setSymbols(charSpec.isSelected());
+		mdl.setPronounceable(pronon.isSelected());
+		mdl.setUnAmbiguous(charAmbigus.isSelected());
+		password.setText(mdl.getNewPassword());
 	}
-	
-	
-	
-/*	
-	@FXML
-	private CheckBox c_min;
-	
-	@FXML
-	private CheckBox c_dig;
-	
-	@FXML
-	private CheckBox c_spec;
-	
-	@FXML
-	private CheckBox c_pron;
 
-	@FXML
-	private CheckBox c_amb;*/
 }

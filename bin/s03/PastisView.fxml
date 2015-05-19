@@ -34,13 +34,13 @@
             <Label prefHeight="16.0" prefWidth="174.0" text="Chiffres" GridPane.rowIndex="3" />
             <Label prefHeight="16.0" prefWidth="174.0" text="Lettres minuscules" GridPane.rowIndex="2" />
             <Label prefHeight="16.0" prefWidth="174.0" text="Caractères ambigus" GridPane.rowIndex="6" />
-            <CheckBox id="c_maj" fx:id="c_maj" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#handleCheckBoxAction" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <TextField maxWidth="40.0" prefHeight="26.0" prefWidth="28.0" text="12" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
-            <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
-            <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
-            <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
-            <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
-            <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <CheckBox id="c_maj" fx:id="majuscules" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <TextField fx:id="longueur" maxWidth="40.0" prefHeight="26.0" prefWidth="28.0" text="12" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+            <CheckBox fx:id="charAmbigus" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+            <CheckBox fx:id="pronon" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+            <CheckBox fx:id="charSpec" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+            <CheckBox fx:id="chiffres" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <CheckBox fx:id="minuscules" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
             <Label prefHeight="16.0" prefWidth="174.0" text="Niveau de sécurité" GridPane.rowIndex="7" />
             <ProgressBar prefWidth="200.0" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
          </children>
@@ -50,23 +50,23 @@
       </GridPane>
    </center>
    <right>
-      <Button defaultButton="true" mnemonicParsing="false" text="Générer" BorderPane.alignment="CENTER">
+      <Button id="BtnGenerate" fx:id="generate" defaultButton="true" mnemonicParsing="false" onAction="#handleGenerateButton" text="Générer" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets right="10.0" top="240.0" />
          </BorderPane.margin>
       </Button>
    </right>
    <bottom>
-      <TextField alignment="CENTER" maxHeight="28.0" maxWidth="153.0" minHeight="0.0" minWidth="20.0" prefHeight="28.0" prefWidth="153.0" BorderPane.alignment="CENTER">
+      <TextField fx:id="password" alignment="CENTER" maxHeight="28.0" maxWidth="153.0" minHeight="0.0" minWidth="20.0" prefHeight="28.0" prefWidth="153.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="30.0" />
          </BorderPane.margin>
       </TextField>
    </bottom>
    <top>
-      <ImageView cache="true" cacheHint="ROTATE" depthTest="DISABLE" fitHeight="69.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView cache="true" cacheHint="ROTATE" depthTest="DISABLE" fitHeight="89.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@../../../../../Desktop/coollogo_com-63691932.gif" />
+            <Image url="@../../src/s03/Images/pastis.png" />
          </image>
       </ImageView>
    </top>
