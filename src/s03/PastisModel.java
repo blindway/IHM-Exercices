@@ -36,7 +36,7 @@ public class PastisModel implements IPastisModel {
 		// si majuscules
 		if (withUcLetters()) {
 			String strtemp = getUcLetters();
-			for (int i = 0; i < length; i++) {
+			for (int i = 0; i < chars.length; i++) {
 				strtemp += chars[i];
 			}
 			char[] temp = strtemp.toCharArray();
