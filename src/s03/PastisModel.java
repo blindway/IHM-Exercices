@@ -27,6 +27,7 @@ public class PastisModel implements IPastisModel {
 	}
 
 	public String getNewPassword() {
+		chars = new char [26];
 		// si minuscules
 		if (withLcLetters()) {
 			chars = getLcLetters().toCharArray();

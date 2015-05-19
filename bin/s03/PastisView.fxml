@@ -41,8 +41,6 @@
             <CheckBox fx:id="charSpec" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
             <CheckBox fx:id="chiffres" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
             <CheckBox fx:id="minuscules" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-            <Label prefHeight="16.0" prefWidth="174.0" text="Niveau de sécurité" GridPane.rowIndex="7" />
-            <ProgressBar prefWidth="200.0" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
          </children>
          <BorderPane.margin>
             <Insets top="20.0" />
@@ -57,7 +55,7 @@
       </Button>
    </right>
    <bottom>
-      <TextField fx:id="password" alignment="CENTER" maxHeight="28.0" maxWidth="153.0" minHeight="0.0" minWidth="20.0" prefHeight="28.0" prefWidth="153.0" BorderPane.alignment="CENTER">
+      <TextField fx:id="password" alignment="CENTER" maxHeight="47.0" maxWidth="193.0" minHeight="0.0" minWidth="20.0" prefHeight="47.0" prefWidth="193.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="30.0" />
          </BorderPane.margin>
