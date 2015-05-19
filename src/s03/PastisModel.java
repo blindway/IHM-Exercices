@@ -36,7 +36,7 @@ public class PastisModel implements IPastisModel {
 		// si majuscules
 		if (withUcLetters()) {
 			String strtemp = getUcLetters();
-			for (int i = 0; i < chars.length; i++) {
+			for (int i = 0; i < length; i++) {
 				strtemp += chars[i];
 			}
 			char[] temp = strtemp.toCharArray();
@@ -69,7 +69,7 @@ public class PastisModel implements IPastisModel {
 		// creation du mdp
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < length; i++) {
-			char c = chars[r.nextInt(chars.length)];
+			char c = chars[r.nextInt(length)];
 			sb.append(c);
 		}
 		mdp = sb.toString();
