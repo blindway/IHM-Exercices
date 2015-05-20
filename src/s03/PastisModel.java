@@ -77,7 +77,7 @@ public class PastisModel implements IPastisModel {
 			while (x == '\0') {
 				x = chars[r.nextInt(chars.length)];
 			}
-			char c = chars[r.nextInt(length)];
+			//char c = chars[r.nextInt(length)];
 			sb.append(x);
 		}
 		mdp = sb.toString();
