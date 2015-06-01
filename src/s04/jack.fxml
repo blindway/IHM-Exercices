@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Line endX="300.0" layoutX="300.0" layoutY="250.0" startX="-300.0" />
+      <ImageView fitHeight="141.0" fitWidth="95.0" layoutX="209.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cards/10_of_hearts_-_David_Bellot.svg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="95.0" layoutX="201.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cards/100px-01_of_diamonds_A.svg.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="208.0" layoutY="489.0" mnemonicParsing="false" text="Rester" />
+      <Button layoutX="277.0" layoutY="489.0" mnemonicParsing="false" text="Carte" />
+      <Button layoutX="339.0" layoutY="489.0" mnemonicParsing="false" text="Doubler" />
+      <Label layoutX="270.0" layoutY="206.0" text="valeur de la main" />
+      <Label layoutX="260.0" layoutY="312.0" text="valeur de la main" />
+      <ImageView fitHeight="141.0" fitWidth="95.0" layoutX="252.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cards/100px-King_of_hearts_fr.svg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="95.0" layoutX="260.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cards/back.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="95.0" layoutX="316.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cards/back.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="95.0" layoutX="308.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cards/back.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="543.0" layoutY="185.0" text="Croupier" />
+      <Label layoutX="554.0" layoutY="279.0" text="Vous" />
+      <Label layoutX="27.0" layoutY="86.0" text="Manches gagnées " />
+      <Label layoutX="27.0" layoutY="312.0" text="Manches gagnées: " />
+      <Label layoutX="148.0" layoutY="81.0" prefHeight="26.0" prefWidth="13.0" text="0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="157.0" layoutY="307.0" prefHeight="26.0" prefWidth="13.0" text="0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ToolBar prefHeight="16.0" prefWidth="600.0">
+        <items>
+          <Button mnemonicParsing="false" text="Options" />
+        </items>
+      </ToolBar>
+   </children>
+</Pane>
