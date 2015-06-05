@@ -44,7 +44,7 @@ public class BlackJackCtrl {
 	private Label lblArgMise;
 
 	@FXML
-	private Button btn5S;
+	private Button btn5;
 
 	@FXML
 	private Button btn10;
