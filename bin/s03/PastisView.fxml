@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="503.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s03.PastisControler">
+   <center>
+      <GridPane alignment="CENTER" maxHeight="315.0" maxWidth="289.0" prefHeight="315.0" prefWidth="289.0" BorderPane.alignment="TOP_CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.72059631347656" minWidth="10.0" prefWidth="191.72059631347656" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.75267028808594" minWidth="10.0" prefWidth="97.27940368652344" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="67.29039001464844" minHeight="10.0" prefHeight="67.29039001464844" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="20.709609985351562" valignment="CENTER" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="16.86016845703125" valignment="CENTER" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="49.13983154296875" valignment="CENTER" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="21.0" prefWidth="186.0" text="Longueur du mot de passe" />
+            <Label prefHeight="16.0" prefWidth="174.0" text="Lettres majuscules" GridPane.rowIndex="1" />
+            <Label prefHeight="16.0" prefWidth="174.0" text="Prononçable" GridPane.rowIndex="5" />
+            <Label prefHeight="16.0" prefWidth="174.0" text="Caractères spéciaux" GridPane.rowIndex="4" />
+            <Label prefHeight="16.0" prefWidth="174.0" text="Chiffres" GridPane.rowIndex="3" />
+            <Label prefHeight="16.0" prefWidth="174.0" text="Lettres minuscules" GridPane.rowIndex="2" />
+            <Label prefHeight="16.0" prefWidth="174.0" text="Caractères ambigus" GridPane.rowIndex="6" />
+            <CheckBox id="c_maj" fx:id="majuscules" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <TextField fx:id="longueur" maxWidth="40.0" prefHeight="26.0" prefWidth="28.0" text="12" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+            <CheckBox fx:id="charAmbigus" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+            <CheckBox fx:id="pronon" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+            <CheckBox fx:id="charSpec" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+            <CheckBox fx:id="chiffres" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <CheckBox fx:id="minuscules" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <ProgressBar fx:id="robust" prefWidth="200.0" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Robustesse" GridPane.rowIndex="7" />
+         </children>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+   <right>
+      <Button id="BtnGenerate" fx:id="generate" defaultButton="true" mnemonicParsing="false" onAction="#handleGenerateButton" text="Générer" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="10.0" top="240.0" />
+         </BorderPane.margin>
+      </Button>
+   </right>
+   <bottom>
+      <TextField fx:id="password" alignment="CENTER" maxHeight="47.0" maxWidth="193.0" minHeight="0.0" minWidth="20.0" prefHeight="47.0" prefWidth="193.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="30.0" />
+         </BorderPane.margin>
+         <tooltip>
+            <Tooltip fx:id="tooltip" text="Empty Tooltip" />
+         </tooltip>
+      </TextField>
+   </bottom>
+   <top>
+      <ImageView cache="true" cacheHint="ROTATE" depthTest="DISABLE" fitHeight="89.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../src/s03/Images/pastis.png" />
+         </image>
+      </ImageView>
+   </top>
+</BorderPane>
