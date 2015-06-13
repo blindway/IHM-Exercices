@@ -59,6 +59,16 @@ public class BlackJackCtrl {
 	private Button btn100;
 
 	@FXML
+	void handleRecommencerButton(){
+		
+	}
+	
+	@FXML
+	void handleReglesButton(){
+		
+	}
+	
+	@FXML
 	void handleCarteButton() {
 
 	}
@@ -71,6 +81,79 @@ public class BlackJackCtrl {
 	@FXML
 	void handleResterButton() {
 
+	}
+
+	@FXML
+	void handle5Button() {
+
+	}
+
+	@FXML
+	void handle10Button() {
+
+	}
+
+	@FXML
+	void handle25Button() {
+
+	}
+
+	@FXML
+	void handle50Button() {
+
+	}
+
+	@FXML
+	void handle100Button() {
+
+	}
+
+	public void setImgCarteC1(ImageView imgCarteC1) {
+		this.imgCarteC1 = imgCarteC1;
+	}
+
+	public void setImgCarteJ1(ImageView imgCarteJ1) {
+		this.imgCarteJ1 = imgCarteJ1;
+	}
+
+	public void setLblValMainC(Label lblValMainC) {
+		this.lblValMainC = lblValMainC;
+	}
+
+	public void setLblValMainJ(Label lblValMainJ) {
+		this.lblValMainJ = lblValMainJ;
+	}
+
+	public void setImgCarteJ2(ImageView imgCarteJ2) {
+		this.imgCarteJ2 = imgCarteJ2;
+	}
+
+	public void setImgCarteC2(ImageView imgCarteC2) {
+		this.imgCarteC2 = imgCarteC2;
+	}
+
+	public void setImgCarteC3(ImageView imgCarteC3) {
+		this.imgCarteC3 = imgCarteC3;
+	}
+
+	public void setImgCarteJ3(ImageView imgCarteJ3) {
+		this.imgCarteJ3 = imgCarteJ3;
+	}
+
+	public void setLblMPerdues(Label lblMPerdues) {
+		this.lblMPerdues = lblMPerdues;
+	}
+
+	public void setLblMGagnees(Label lblMGagnees) {
+		this.lblMGagnees = lblMGagnees;
+	}
+
+	public void setLblSolde(Label lblSolde) {
+		this.lblSolde = lblSolde;
+	}
+
+	public void setLblArgMise(Label lblArgMise) {
+		this.lblArgMise = lblArgMise;
 	}
 
 }

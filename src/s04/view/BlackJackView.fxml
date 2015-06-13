@@ -22,10 +22,10 @@
          </image>
       </ImageView>
       <Button layoutX="16.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleResterButton" text="Rester" />
-      <Button layoutX="90.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleCarteButton" text="Carte" />
-      <Button layoutX="157.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleDoublerButton" text="Doubler" />
-      <Label fx:id="lblValMainC" layoutX="260.0" layoutY="56.0" text="valeur de la main" />
-      <Label fx:id="lblValMainJ" layoutX="260.0" layoutY="302.0" text="valeur de la main" />
+      <Button layoutX="81.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleCarteButton" text="Carte" />
+      <Button layoutX="139.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleDoublerButton" text="Doubler" />
+      <Label fx:id="lblValMainC" layoutX="260.0" layoutY="56.0" text="Valeur de la main" />
+      <Label fx:id="lblValMainJ" layoutX="260.0" layoutY="302.0" text="Valeur de la main" />
       <ImageView fx:id="imgCarteJ2" fitHeight="141.0" fitWidth="95.0" layoutX="261.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cards/100px-King_of_hearts_fr.svg.png" />
@@ -64,8 +64,8 @@
          <items>
             <MenuButton graphicTextGap="3.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" text="Options">
               <items>
-                <MenuItem mnemonicParsing="false" text="Recommencer" />
-                <MenuItem mnemonicParsing="false" text="Règles" />
+                <MenuItem mnemonicParsing="false" onAction="#handleRecommencerButton" text="Recommencer" />
+                <MenuItem mnemonicParsing="false" onAction="#handleReglesButton" text="Règles" />
               </items>
                <font>
                   <Font size="14.0" />
@@ -77,10 +77,10 @@
       <Label fx:id="lblSolde" layoutX="73.0" layoutY="45.0" text="0" />
       <Label fx:id="lblArgMise" layoutX="520.0" layoutY="323.0" prefHeight="21.0" prefWidth="13.0" text="0" />
       <Label layoutX="432.0" layoutY="323.0" text="Argent misé" />
-      <Button fx:id="btn5" layoutX="382.0" layoutY="484.0" mnemonicParsing="false" text="5" />
-      <Button fx:id="btn10" layoutX="414.0" layoutY="484.0" mnemonicParsing="false" text="10" />
-      <Button fx:id="btn25" layoutX="454.0" layoutY="484.0" mnemonicParsing="false" text="25" />
-      <Button fx:id="btn50" layoutX="494.0" layoutY="484.0" mnemonicParsing="false" text="50" />
-      <Button fx:id="btn100" layoutX="534.0" layoutY="484.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="47.0" text="100" />
+      <Button fx:id="btn5" layoutX="383.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle5Button" text="5" />
+      <Button fx:id="btn10" layoutX="415.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle10Button" text="10" />
+      <Button fx:id="btn25" layoutX="455.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle25Button" text="25" />
+      <Button fx:id="btn50" layoutX="495.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle50Button" text="50" />
+      <Button fx:id="btn100" layoutX="535.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle100Button" prefHeight="31.0" prefWidth="47.0" text="100" />
    </children>
 </Pane>
