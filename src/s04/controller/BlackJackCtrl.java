@@ -37,6 +37,18 @@ public class BlackJackCtrl {
 	private ImageView imgCarteJ3;
 
 	@FXML
+	private ImageView imgCarteC4;
+
+	@FXML
+	private ImageView imgCarteJ4;
+
+	@FXML
+	private ImageView imgCarteC5;
+
+	@FXML
+	private ImageView imgCarteJ5;
+
+	@FXML
 	private Label lblMPerdues;
 
 	@FXML
@@ -62,6 +74,15 @@ public class BlackJackCtrl {
 
 	@FXML
 	private Button btn100;
+
+	public BlackJackCtrl() {
+		lblSolde = new Label("0");
+		lblArgMise = new Label("0");
+		lblMGagnees = new Label("0");
+		lblMPerdues = new Label("0");
+		lblValMainC = new Label("Valeur Main");
+		lblValMainJ = new Label("Valeur Main");
+	}
 
 	@FXML
 	void handleRecommencerButton() {
@@ -146,24 +167,36 @@ public class BlackJackCtrl {
 		this.imgCarteJ3 = imgCarteJ3;
 	}
 
-	public void setLblMPerdues(Label lblMPerdues) {
-		this.lblMPerdues = lblMPerdues;
+	public void setImgCarteC4(ImageView imgCarteC4) {
+		this.imgCarteC4 = imgCarteC4;
 	}
 
-	public void setLblMGagnees(Label lblMGagnees) {
-		this.lblMGagnees = lblMGagnees;
+	public void setImgCarteJ4(ImageView imgCarteJ4) {
+		this.imgCarteJ4 = imgCarteJ4;
 	}
 
-	public void setLblSolde(Label lblSolde) {
-		this.lblSolde = lblSolde;
+	public void setImgCarteC5(ImageView imgCarteC5) {
+		this.imgCarteC5 = imgCarteC5;
 	}
 
-	public void setLblArgMise(Label lblArgMise) {
-		this.lblArgMise = lblArgMise;
+	public void setImgCarteJ5(ImageView imgCarteJ5) {
+		this.imgCarteJ5 = imgCarteJ5;
 	}
-	
-	public void initModel(){
-		model = new BlackJackModel();
+
+	public void setLblMPerdues(String mPerdues) {
+		lblMPerdues.setText(mPerdues);
+	}
+
+	public void setLblMGagnees(String mGagnees) {
+		lblMGagnees.setText(mGagnees);
+	}
+
+	public void setLblSolde(String solde) {
+		lblSolde.setText(solde);
+	}
+
+	public void setLblArgMise(String argMise) {
+		lblArgMise.setText(argMise);
 	}
 
 }

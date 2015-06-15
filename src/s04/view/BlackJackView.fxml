@@ -16,12 +16,12 @@
          </image>
       </ImageView>
       <Line endX="300.0" layoutX="300.0" layoutY="250.0" startX="-300.0" />
-      <ImageView fx:id="imgCarteC1" fitHeight="141.0" fitWidth="95.0" layoutX="212.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteC1" fitHeight="141.0" fitWidth="95.0" layoutX="198.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/100px-02_of_diamonds.svg.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgCarteJ1" fitHeight="141.0" fitWidth="95.0" layoutX="212.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteJ1" fitHeight="141.0" fitWidth="95.0" layoutX="191.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cards/100px-01_of_diamonds_A.svg.png" />
          </image>
@@ -46,22 +46,22 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <ImageView fx:id="imgCarteJ2" fitHeight="141.0" fitWidth="95.0" layoutX="260.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteJ2" fitHeight="141.0" fitWidth="95.0" layoutX="219.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cards/100px-King_of_hearts_fr.svg.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgCarteC2" fitHeight="141.0" fitWidth="95.0" layoutX="260.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteC2" fitHeight="141.0" fitWidth="95.0" layoutX="232.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/100px-01_of_spades_A.svg.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgCarteC3" fitHeight="141.0" fitWidth="95.0" layoutX="315.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteC3" fitHeight="141.0" fitWidth="95.0" layoutX="260.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/10_of_clubs_-_David_Bellot.svg.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgCarteJ3" fitHeight="141.0" fitWidth="95.0" layoutX="315.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteJ3" fitHeight="141.0" fitWidth="95.0" layoutX="252.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cards/back.png" />
          </image>
@@ -141,5 +141,25 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
+      <ImageView fx:id="imgCarteC4" fitHeight="141.0" fitWidth="95.0" layoutX="293.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/10_of_clubs_-_David_Bellot.svg.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCarteC5" fitHeight="141.0" fitWidth="95.0" layoutX="327.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/10_of_clubs_-_David_Bellot.svg.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCarteJ4" fitHeight="141.0" fitWidth="95.0" layoutX="292.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cards/back.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCarteJ5" fitHeight="141.0" fitWidth="95.0" layoutX="330.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cards/back.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

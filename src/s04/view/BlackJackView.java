@@ -7,13 +7,15 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import s04.controller.BlackJackCtrl;
+import s04.model.BlackJackModel;
 
 public class BlackJackView extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		BlackJackCtrl ctrl = new BlackJackCtrl();
-		ctrl.initModel();
+		BlackJackModel model = new BlackJackModel(ctrl);
+		
 		FXMLLoader loader = new FXMLLoader(getClass().getResource(
 				"BlackJackView.fxml"));
 		Pane root = loader.load();
