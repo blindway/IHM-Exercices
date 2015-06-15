@@ -1,11 +1,15 @@
 package s04.controller;
 
+import s04.model.BlackJackModel;
+import s04.view.BlackJackView;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 public class BlackJackCtrl {
+	BlackJackView view;
+	BlackJackModel model;
 
 	@FXML
 	private ImageView imgCarteC1;
@@ -58,16 +62,21 @@ public class BlackJackCtrl {
 	@FXML
 	private Button btn100;
 
-	@FXML
-	void handleRecommencerButton(){
-		
+	public BlackJackCtrl(BlackJackView view) {
+		this.view = view;
+		model = new BlackJackModel();
 	}
-	
+
 	@FXML
-	void handleReglesButton(){
-		
+	void handleRecommencerButton() {
+
 	}
-	
+
+	@FXML
+	void handleReglesButton() {
+
+	}
+
 	@FXML
 	void handleCarteButton() {
 

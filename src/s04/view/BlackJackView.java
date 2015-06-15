@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class BlackJackView extends Application {
 
-	BlackJackCtrl ctrl = new BlackJackCtrl();
+	BlackJackCtrl ctrl = new BlackJackCtrl(this);
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
