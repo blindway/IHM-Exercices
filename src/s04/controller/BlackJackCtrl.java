@@ -72,7 +72,6 @@ public class BlackJackCtrl {
 	void handleReglesButton(ActionEvent event) {
 
 		System.out.println("aaa");
-
 	}
 
 	@FXML
@@ -161,6 +160,10 @@ public class BlackJackCtrl {
 
 	public void setLblArgMise(Label lblArgMise) {
 		this.lblArgMise = lblArgMise;
+	}
+	
+	public void initModel(){
+		model = new BlackJackModel();
 	}
 
 }

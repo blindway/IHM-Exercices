@@ -1,10 +1,10 @@
 package s04.model;
 
 public class BlackJackModel {
-	private Card[] cards = new Card[312]; // 4 jeux de cartes de 52
-	private Card[] dealtCards = new Card[312]; // Cartes tirées
-	private Card[] mainCroupier = new Card[10];
-	private Card[] mainJoueur = new Card[10];
+	private Card[] cards = new Card[52]; // 1 jeux de 52 cartes
+	private Card[] dealtCards = new Card[52]; // Cartes tirées
+	private Card[] mainCroupier = new Card[3];
+	private Card[] mainJoueur = new Card[3];
 
 	private int solde;
 	private int mise;

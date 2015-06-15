@@ -13,6 +13,7 @@ public class BlackJackView extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		BlackJackCtrl ctrl = new BlackJackCtrl();
+		ctrl.initModel();
 		FXMLLoader loader = new FXMLLoader(getClass().getResource(
 				"BlackJackView.fxml"));
 		Pane root = loader.load();
