@@ -8,56 +8,88 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s04.controller.BlackJackCtrl">
+<Pane maxHeight="529.0" maxWidth="600.0" minHeight="529.0" minWidth="600.0" prefHeight="529.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s04.controller.BlackJackCtrl">
    <children>
+      <ImageView fitHeight="514.0" fitWidth="995.0" layoutX="-252.0" layoutY="35.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/b.jpg" />
+         </image>
+      </ImageView>
       <Line endX="300.0" layoutX="300.0" layoutY="250.0" startX="-300.0" />
-      <ImageView fx:id="imgCarteC1" fitHeight="141.0" fitWidth="95.0" layoutX="213.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteC1" fitHeight="141.0" fitWidth="95.0" layoutX="212.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cards/10_of_hearts_-_David_Bellot.svg.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgCarteJ1" fitHeight="141.0" fitWidth="95.0" layoutX="213.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteJ1" fitHeight="141.0" fitWidth="95.0" layoutX="212.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cards/100px-01_of_diamonds_A.svg.png" />
          </image>
       </ImageView>
-      <Button layoutX="16.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleResterButton" text="Rester" />
-      <Button layoutX="81.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleCarteButton" text="Carte" />
-      <Button layoutX="139.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleDoublerButton" text="Doubler" />
-      <Label fx:id="lblValMainC" layoutX="260.0" layoutY="56.0" text="Valeur de la main" />
-      <Label fx:id="lblValMainJ" layoutX="260.0" layoutY="302.0" text="Valeur de la main" />
-      <ImageView fx:id="imgCarteJ2" fitHeight="141.0" fitWidth="95.0" layoutX="261.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="16.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleResterButton" text="Rester">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="81.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleCarteButton" text="Carte">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="139.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleDoublerButton" text="Doubler">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Label fx:id="lblValMainC" layoutX="260.0" layoutY="53.0" text="Valeur de la main">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblValMainJ" layoutX="257.0" layoutY="265.0" text="Valeur de la main">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <ImageView fx:id="imgCarteJ2" fitHeight="141.0" fitWidth="95.0" layoutX="260.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cards/100px-King_of_hearts_fr.svg.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgCarteC2" fitHeight="141.0" fitWidth="95.0" layoutX="261.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteC2" fitHeight="141.0" fitWidth="95.0" layoutX="260.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cards/back.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgCarteC3" fitHeight="141.0" fitWidth="95.0" layoutX="316.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteC3" fitHeight="141.0" fitWidth="95.0" layoutX="315.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cards/back.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgCarteJ3" fitHeight="141.0" fitWidth="95.0" layoutX="316.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteJ3" fitHeight="141.0" fitWidth="95.0" layoutX="315.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cards/back.png" />
          </image>
       </ImageView>
-      <Label layoutX="525.0" layoutY="189.0" text="Croupier" />
-      <Label layoutX="537.0" layoutY="281.0" text="Vous" />
-      <Label layoutX="28.0" layoutY="82.0" text="Manches gagnées: " />
-      <Label layoutX="27.0" layoutY="312.0" text="Manches gagnées: " />
-      <Label fx:id="lblMPerdues" layoutX="157.0" layoutY="78.0" prefHeight="26.0" prefWidth="13.0" text="0">
+      <Label layoutX="529.0" layoutY="53.0" text="Croupier">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="552.0" layoutY="265.0" text="Vous">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="14.0" layoutY="52.0" text="Manches gagnées: ">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="10.0" layoutY="265.0" text="Manches gagnées: ">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblMPerdues" layoutX="147.0" layoutY="49.0" prefHeight="26.0" prefWidth="13.0" text="0">
+         <font>
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblMGagnees" layoutX="157.0" layoutY="307.0" prefHeight="26.0" prefWidth="13.0" text="0">
+      <Label fx:id="lblMGagnees" layoutX="141.0" layoutY="261.0" prefHeight="26.0" prefWidth="13.0" text="0">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
       <ToolBar layoutY="-3.0" prefHeight="39.0" prefWidth="600.0">
@@ -73,14 +105,41 @@
             </MenuButton>
          </items>
       </ToolBar>
-      <Label layoutX="27.0" layoutY="45.0" text="Solde:" />
-      <Label fx:id="lblSolde" layoutX="73.0" layoutY="45.0" text="0" />
-      <Label fx:id="lblArgMise" layoutX="520.0" layoutY="323.0" prefHeight="21.0" prefWidth="13.0" text="0" />
-      <Label layoutX="432.0" layoutY="323.0" text="Argent misé" />
-      <Button fx:id="btn5" layoutX="383.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle5Button" text="5" />
-      <Button fx:id="btn10" layoutX="415.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle10Button" text="10" />
-      <Button fx:id="btn25" layoutX="455.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle25Button" text="25" />
-      <Button fx:id="btn50" layoutX="495.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle50Button" text="50" />
-      <Button fx:id="btn100" layoutX="535.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle100Button" prefHeight="31.0" prefWidth="47.0" text="100" />
+      <Label layoutX="10.0" layoutY="298.0" text="Solde:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblSolde" layoutX="56.0" layoutY="298.0" text="0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblArgMise" layoutX="526.0" layoutY="449.0" prefHeight="16.0" prefWidth="13.0" text="0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="436.0" layoutY="449.0" text="Argent misé:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Button fx:id="btn5" layoutX="387.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle5Button" text="5">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btn10" layoutX="419.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle10Button" text="10">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btn25" layoutX="459.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle25Button" text="25">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btn50" layoutX="499.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle50Button" text="50">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btn100" layoutX="539.0" layoutY="489.0" mnemonicParsing="false" onAction="#handle100Button" prefHeight="26.0" prefWidth="47.0" text="100">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
    </children>
 </Pane>

@@ -19,9 +19,12 @@ public class BlackJackView extends Application{
 		
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
+		
+		primaryStage.setResizable(false);
+		
 		primaryStage.show();
 		primaryStage.setTitle("BlackJack");
-		
+
 	}
 	
 	public static void main(String[] args) {
