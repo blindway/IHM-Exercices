@@ -92,12 +92,17 @@ public class BlackJackCtrl {
 	}
 
 	@FXML
-	void handleReglesButton(ActionEvent event){
+	void handleReglesButton(ActionEvent event) {
 		Alert dialog = new Alert(AlertType.INFORMATION);
 		dialog.setTitle("BlackJack");
-		dialog.setHeaderText("Voici quelques règles du BlackJack");
-		dialog.setContentText("Le but du jeu est de battre le croupier en accumulant un score de main plus élevé, sans dépasser 21.\nLe score de votre main est la somme des différentes cartes.\nLes cartes avec un chiffre comptent pour leur valeur.\nLes cartes habillées valent 10 points alors qu'un As peut compter pour un ou pour onze points, au choix.\nPour plus d'informations: http://www.guide-blackjack.com/Regles-du-black-jack.html ");
-		dialog.showAndWait();
+		dialog.setHeaderText("Voici quelques règles du BlackJack"
+				+ "");
+		dialog.setContentText(
+			"Le but du jeu est de battre le croupier en accumulant un score de main plus élevé, sans dépasser 21." 
+			+ "Le score de votre main est la somme des différentes cartes."
+			+ "Les cartes avec un chiffre comptent pour leur valeur. "
+			+ "Les cartes habillées valent 10 points alors qu'un As peut compter pour un ou pour onze points, au choix.");
+		dialg.showAndWait();
 	}
 
 	@FXML
