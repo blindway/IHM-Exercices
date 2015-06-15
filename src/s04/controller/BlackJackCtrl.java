@@ -63,7 +63,6 @@ public class BlackJackCtrl {
 	@FXML
 	private Button btn100;
 
-
 	@FXML
 	void handleRecommencerButton() {
 
@@ -71,10 +70,9 @@ public class BlackJackCtrl {
 
 	@FXML
 	void handleReglesButton(ActionEvent event) {
-		
+
 		System.out.println("aaa");
-		view.showRules();
-		
+
 	}
 
 	@FXML
@@ -165,7 +163,4 @@ public class BlackJackCtrl {
 		this.lblArgMise = lblArgMise;
 	}
 
-	public void setView(BlackJackView view){
-		this.view = view;
-	}
 }
