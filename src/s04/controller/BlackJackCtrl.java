@@ -62,10 +62,6 @@ public class BlackJackCtrl {
 	@FXML
 	private Button btn100;
 
-	public BlackJackCtrl(BlackJackView view) {
-		this.view = view;
-		model = new BlackJackModel();
-	}
 
 	@FXML
 	void handleRecommencerButton() {
@@ -165,4 +161,7 @@ public class BlackJackCtrl {
 		this.lblArgMise = lblArgMise;
 	}
 
+	public void setView(BlackJackView view){
+		this.view = view;
+	}
 }
