@@ -10,7 +10,7 @@
 
 <Pane maxHeight="529.0" maxWidth="600.0" minHeight="529.0" minWidth="600.0" prefHeight="529.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s04.controller.BlackJackCtrl">
    <children>
-      <ImageView fitHeight="514.0" fitWidth="995.0" layoutX="-252.0" layoutY="35.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="515.0" fitWidth="1013.0" layoutX="-252.0" layoutY="35.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/b.jpg" />
          </image>
