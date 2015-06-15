@@ -18,7 +18,7 @@
       <Line endX="300.0" layoutX="300.0" layoutY="250.0" startX="-300.0" />
       <ImageView fx:id="imgCarteC1" fitHeight="141.0" fitWidth="95.0" layoutX="212.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@cards/10_of_hearts_-_David_Bellot.svg.png" />
+            <Image url="@img/100px-02_of_diamonds.svg.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imgCarteJ1" fitHeight="141.0" fitWidth="95.0" layoutX="212.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
@@ -53,12 +53,12 @@
       </ImageView>
       <ImageView fx:id="imgCarteC2" fitHeight="141.0" fitWidth="95.0" layoutX="260.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@cards/back.png" />
+            <Image url="@img/100px-01_of_spades_A.svg.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imgCarteC3" fitHeight="141.0" fitWidth="95.0" layoutX="315.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@cards/back.png" />
+            <Image url="@img/10_of_clubs_-_David_Bellot.svg.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imgCarteJ3" fitHeight="141.0" fitWidth="95.0" layoutX="315.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
@@ -92,7 +92,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <ToolBar layoutY="-3.0" prefHeight="39.0" prefWidth="600.0">
+      <ToolBar layoutY="-3.0" prefHeight="44.0" prefWidth="628.0">
          <items>
             <MenuButton graphicTextGap="3.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" text="Options">
               <items>
