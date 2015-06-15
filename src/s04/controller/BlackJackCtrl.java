@@ -2,6 +2,7 @@ package s04.controller;
 
 import s04.model.BlackJackModel;
 import s04.view.BlackJackView;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -69,8 +70,11 @@ public class BlackJackCtrl {
 	}
 
 	@FXML
-	void handleReglesButton() {
-
+	void handleReglesButton(ActionEvent event) {
+		
+		System.out.println("aaa");
+		view.showRules();
+		
 	}
 
 	@FXML
