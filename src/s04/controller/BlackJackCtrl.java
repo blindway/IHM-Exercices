@@ -5,6 +5,8 @@ import s04.model.Card;
 import s04.view.BlackJackView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -141,9 +143,12 @@ public class BlackJackCtrl {
 	}
 
 	@FXML
-	void handleReglesButton(ActionEvent event) {
-
-		System.out.println("aaa");
+	void handleReglesButton(ActionEvent event){
+		Alert dialog = new Alert(AlertType.INFORMATION);
+		dialog.setTitle("BlackJack");
+		dialog.setHeaderText("Voici quelques règles du BlackJack");
+		dialog.setContentText("Le but du jeu est de battre le croupier en accumulant un score de main plus élevé, sans dépasser 21.\nLe score de votre main est la somme des différentes cartes.\nLes cartes avec un chiffre comptent pour leur valeur.\nLes cartes habillées valent 10 points alors qu'un As peut compter pour un ou pour onze points, au choix.\nPour plus d'informations: http://www.guide-blackjack.com/Regles-du-black-jack.html ");
+		dialog.showAndWait();
 	}
 
 	@FXML

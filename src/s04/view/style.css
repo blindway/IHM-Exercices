@@ -1,0 +1,212 @@
+package s04.controller;
+
+import s04.model.BlackJackModel;
+import s04.view.BlackJackView;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+
+public class BlackJackCtrl {
+	BlackJackView view;
+	BlackJackModel model;
+
+	@FXML
+	private ImageView imgCarteC1;
+
+	@FXML
+	private ImageView imgCarteJ1;
+
+	@FXML
+	private Label lblValMainC;
+
+	@FXML
+	private Label lblValMainJ;
+
+	@FXML
+	private ImageView imgCarteJ2;
+
+	@FXML
+	private ImageView imgCarteC2;
+
+	@FXML
+	private ImageView imgCarteC3;
+
+	@FXML
+	private ImageView imgCarteJ3;
+
+	@FXML
+	private ImageView imgCarteC4;
+
+	@FXML
+	private ImageView imgCarteJ4;
+
+	@FXML
+	private ImageView imgCarteC5;
+
+	@FXML
+	private ImageView imgCarteJ5;
+
+	@FXML
+	private Label lblMPerdues;
+
+	@FXML
+	private Label lblMGagnees;
+
+	@FXML
+	private Label lblSolde;
+
+	@FXML
+	private Label lblArgMise;
+
+	@FXML
+	private Button btn5;
+
+	@FXML
+	private Button btn10;
+
+	@FXML
+	private Button btn25;
+
+	@FXML
+	private Button btn50;
+
+	@FXML
+	private Button btn100;
+
+	public BlackJackCtrl() {
+		lblSolde = new Label("0");
+		lblArgMise = new Label("0");
+		lblMGagnees = new Label("0");
+		lblMPerdues = new Label("0");
+		lblValMainC = new Label("Valeur Main");
+		lblValMainJ = new Label("Valeur Main");
+	}
+
+	@FXML
+	void handleRecommencerButton() {
+
+	}
+
+	@FXML
+	void handleReglesButton(ActionEvent event) {
+		Alert dialog = new Alert(AlertType.INFORMATION);
+		dialog.setTitle("BlackJack");
+		dialog.setHeaderText("Voici quelques règles du BlackJack"
+				+ "");
+		dialog.setContentText(
+			"Le but du jeu est de battre le croupier en accumulant un score de main plus élevé, sans dépasser 21." 
+			+ "Le score de votre main est la somme des différentes cartes."
+			+ "Les cartes avec un chiffre comptent pour leur valeur. "
+			+ "Les cartes habillées valent 10 points alors qu'un As peut compter pour un ou pour onze points, au choix.");
+		dialg.showAndWait();
+	}
+
+	@FXML
+	void handleCarteButton() {
+
+	}
+
+	@FXML
+	void handleDoublerButton() {
+
+	}
+
+	@FXML
+	void handleResterButton() {
+
+	}
+
+	@FXML
+	void handle5Button() {
+
+	}
+
+	@FXML
+	void handle10Button() {
+
+	}
+
+	@FXML
+	void handle25Button() {
+
+	}
+
+	@FXML
+	void handle50Button() {
+
+	}
+
+	@FXML
+	void handle100Button() {
+
+	}
+
+	public void setImgCarteC1(ImageView imgCarteC1) {
+		this.imgCarteC1 = imgCarteC1;
+	}
+
+	public void setImgCarteJ1(ImageView imgCarteJ1) {
+		this.imgCarteJ1 = imgCarteJ1;
+	}
+
+	public void setLblValMainC(Label lblValMainC) {
+		this.lblValMainC = lblValMainC;
+	}
+
+	public void setLblValMainJ(Label lblValMainJ) {
+		this.lblValMainJ = lblValMainJ;
+	}
+
+	public void setImgCarteJ2(ImageView imgCarteJ2) {
+		this.imgCarteJ2 = imgCarteJ2;
+	}
+
+	public void setImgCarteC2(ImageView imgCarteC2) {
+		this.imgCarteC2 = imgCarteC2;
+	}
+
+	public void setImgCarteC3(ImageView imgCarteC3) {
+		this.imgCarteC3 = imgCarteC3;
+	}
+
+	public void setImgCarteJ3(ImageView imgCarteJ3) {
+		this.imgCarteJ3 = imgCarteJ3;
+	}
+
+	public void setImgCarteC4(ImageView imgCarteC4) {
+		this.imgCarteC4 = imgCarteC4;
+	}
+
+	public void setImgCarteJ4(ImageView imgCarteJ4) {
+		this.imgCarteJ4 = imgCarteJ4;
+	}
+
+	public void setImgCarteC5(ImageView imgCarteC5) {
+		this.imgCarteC5 = imgCarteC5;
+	}
+
+	public void setImgCarteJ5(ImageView imgCarteJ5) {
+		this.imgCarteJ5 = imgCarteJ5;
+	}
+
+	public void setLblMPerdues(String mPerdues) {
+		lblMPerdues.setText(mPerdues);
+	}
+
+	public void setLblMGagnees(String mGagnees) {
+		lblMGagnees.setText(mGagnees);
+	}
+
+	public void setLblSolde(String solde) {
+		lblSolde.setText(solde);
+	}
+
+	public void setLblArgMise(String argMise) {
+		lblArgMise.setText(argMise);
+	}
+
+}
