@@ -7,8 +7,8 @@ import s04.controller.BlackJackCtrl;
 public class BlackJackModel {
 	private Card[] cards;
 	private Card[] dealtCards; // Cartes tirées
-	private Card[] mainCroupier;
-	private Card[] mainJoueur;
+	private Card[] mainCroupier; // main du croupier
+	private Card[] mainJoueur; // main du joueur
 
 	private int solde;
 	private int mise;
@@ -16,14 +16,12 @@ public class BlackJackModel {
 	private int mancheTotales;
 	private Random random;
 	private BlackJackCtrl ctrl;
+	private boolean misee;
 
 	public BlackJackModel(BlackJackCtrl ctrl) {
 		this.ctrl = ctrl;
 		cards = new Card[52]; // 1 jeux de 52 cartes
-		mainCroupier = new Card[5]; // main du croupier
-		mainJoueur = new Card[5]; // main du joueur
 		random = new Random();
-		startGame();
 	}
 
 	public void startGame() {
@@ -35,27 +33,127 @@ public class BlackJackModel {
 		ctrl.setLblMGagnees(Integer.toString(mancheGagne));
 		mancheTotales = 0;
 		ctrl.setLblMPerdues(Integer.toString(mancheTotales - mancheGagne));
-		initCartes();
+		startTurn();
+		ctrl.setLblInfo("Misez et tirez les cartes");
+	}
 
+	public void actionJoueur() {
+		if (Integer.valueOf(ctrl.getLblSolde()) == 0) {
+			ctrl.griseAll();
+		}
+		if (mainJoueur[0] == null) {
+			joueurTireCarte();
+			croupierTireCarte();
+			joueurTireCarte();
+			blackJack(ctrl.valMainJ);
+		} else if (mainJoueur[3] != null && mainJoueur[4] == null) {
+			joueurTireCarte();
+			blackJack(ctrl.valMainJ);
+			busted(ctrl.valMainJ);
+			actionCroupier();
+		} else {
+			joueurTireCarte();
+			blackJack(ctrl.valMainJ);
+			busted(ctrl.valMainJ);
+		}
+		// TODO par rapport à la methode, tester si la main du joueur est
+		// pleine, si oui alors terminer le round (gagné, perdu ou égalité)
+		// pt créer une méthode qui dit round terminé
+	}
+
+	public void actionCroupier() {
+		while (ctrl.valMainC < ctrl.valMainJ) {
+			croupierTireCarte();
+			blackJack(ctrl.valMainC);
+			busted(ctrl.valMainC);
+		}
+	}
+
+	public void startTurn() {
+		initCartes();
+		ctrl.cleanImgCards();
+		mainCroupier = new Card[4];
+		mainJoueur = new Card[4];
+		ctrl.degriseAll();
+	}
+
+	public void restart() {
+		solde = 300;
+		startTurn();
+		ctrl.degriseAll();
 	}
 
 	public int valeurMain(Card[] main) {
 		int count = 0;
 		for (Card card : main) {
-			count = count + card.getValue();
+			if (card != null) {
+				count = count + card.getValue();
+			}
 		}
 		return count;
 	}
 
-	public boolean blackJack(int valeur) {
-		boolean result = false;
-		if (valeur == 21)
-			result = true;
-		return result;
+	public void blackJack(int valeur) {
+		if (valeur == 21) {
+			ctrl.setLblInfo("BlackJack, vous avez gagné");
+			ctrl.setLblSolde(String.valueOf(Integer.valueOf(ctrl.getLblSolde())
+					+ 2 * mise));
+			ctrl.griseAll();
+			// TODO ICI il faut faire un popup disant gagné ou perdu, selon si
+			// on teste le blackjack pour le joueur ou le croupier
+			// lancer startturn seulement quand popup est fermé
+			startTurn();
+		}
 	}
 
-	public Card tireCarte() {
-		return cards[random.nextInt(52)];
+	public void busted(int valeur) {
+		if (valeur > 21) {
+			ctrl.setLblInfo("Busted, vous avez perdu");
+			// TODO ici il faut faire un popup disant perdu.
+			ctrl.griseAll();
+			// lancer startturn seulement quand popup est fermé
+			startTurn();
+		}
+	}
+
+	public void joueurTireCarte() {
+		boolean notNull = false;
+		while (notNull != true) {
+			int r = random.nextInt(52);
+			if (cards[r] != null) {
+				for (int i = 0; i < mainJoueur.length; i++) {
+					if (mainJoueur[i] == null) {
+						mainJoueur[i] = cards[r];
+						ctrl.addCarteJoueur(cards[r]);
+						cards[r] = null;
+						break;
+					}
+				}
+				notNull = true;
+				ctrl.setLblValMainJ(String.valueOf(valeurMain(mainJoueur)));
+				ctrl.valMainJ = valeurMain(mainJoueur);
+			}
+		}
+	}
+
+	public void croupierTireCarte() {
+		boolean notNull = false;
+		while (notNull != true) {
+			int r = random.nextInt(52);
+			if (cards[r] != null) {
+				for (int i = 0; i < mainCroupier.length; i++) {
+					if (mainCroupier[i] == null) {
+						mainCroupier[i] = cards[r];
+						ctrl.addCardCroupier((cards[r]));
+						cards[r] = null;
+						break;
+					}
+				}
+				notNull = true;
+				ctrl.setLblValMainC(String.valueOf(valeurMain(mainCroupier)));
+				ctrl.valMainC = valeurMain(mainCroupier);
+			}
+		}
 	}
 
 	public void initCartes() {
@@ -120,7 +218,7 @@ public class BlackJackModel {
 				"s04/view/img/100px-Queen_of_hearts_fr.svg.png");
 		cards[51] = new Card(10,
 				"s04/view/img/100px-Queen_of_spades_fr.svg.png");
-		dealtCards = new Card[52];
+		// dealtCards = new Card[52];
 	}
 
 	public Card[] getCards() {
@@ -168,7 +266,18 @@ public class BlackJackModel {
 	}
 
 	public void setMise(int mise) {
-		this.mise = mise;
+		if (misee == false) {
+			this.mise = mise;
+			solde = solde - mise;
+			ctrl.setLblSolde(solde + "");
+			ctrl.griseMise();
+		}
+	}
+
+	public void setMiseDouble(int mise) {
+		this.mise = this.mise + mise;
+		solde = solde - mise;
+		ctrl.setLblSolde(solde + "");
 	}
 
 	public int getMancheGagne() {
@@ -185,5 +294,9 @@ public class BlackJackModel {
 
 	public void setMancheTotales(int mancheTotales) {
 		this.mancheTotales = mancheTotales;
+	}
+
+	public void aaa() {
+		System.out.println("aaaaaa");
 	}
 }

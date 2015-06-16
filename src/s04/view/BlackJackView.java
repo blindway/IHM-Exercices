@@ -14,8 +14,7 @@ public class BlackJackView extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		BlackJackCtrl ctrl = new BlackJackCtrl();
-		BlackJackModel model = new BlackJackModel(ctrl);
-		
+
 		FXMLLoader loader = new FXMLLoader(getClass().getResource(
 				"BlackJackView.fxml"));
 		Pane root = loader.load();
@@ -28,8 +27,8 @@ public class BlackJackView extends Application {
 		primaryStage.setTitle("BlackJack");
 		primaryStage.getIcons().add(new Image("s04/view/img/pico.png"));
 
-		primaryStage.show();
 
+		primaryStage.show();
 	}
 
 	public static void main(String[] args) {

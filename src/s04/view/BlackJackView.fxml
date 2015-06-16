@@ -18,7 +18,7 @@
       <Line endX="300.0" layoutX="300.0" layoutY="250.0" startX="-300.0" />
       <ImageView fx:id="imgCarteC1" fitHeight="141.0" fitWidth="95.0" layoutX="198.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/100px-02_of_diamonds.svg.png" />
+            <Image url="@img/100px-01_of_spades_A.svg.pngimg/backa.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imgCarteJ1" fitHeight="141.0" fitWidth="95.0" layoutX="191.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
@@ -26,42 +26,42 @@
             <Image url="@cards/100px-01_of_diamonds_A.svg.png" />
          </image>
       </ImageView>
-      <Button layoutX="16.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleResterButton" text="Rester">
+      <Button fx:id="btnRester" layoutX="16.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleResterButton" text="Rester">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button layoutX="81.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleCarteButton" text="Carte">
+      <Button fx:id="btnCarte" layoutX="81.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleCarteButton" text="Carte">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button layoutX="139.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleDoublerButton" text="Doubler">
+      <Button fx:id="btnDoubler" layoutX="139.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleDoublerButton" text="Doubler">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Label fx:id="lblValMainC" layoutX="260.0" layoutY="53.0" text="Valeur de la main">
+      <Label fx:id="lblValMainC" layoutX="260.0" layoutY="53.0" text="Valeur de la main" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label fx:id="lblValMainJ" layoutX="257.0" layoutY="265.0" text="Valeur de la main">
+      <Label fx:id="lblValMainJ" layoutX="257.0" layoutY="265.0" text="Valeur de la main" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <ImageView fx:id="imgCarteJ2" fitHeight="141.0" fitWidth="95.0" layoutX="219.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteJ2" fitHeight="141.0" fitWidth="95.0" layoutX="222.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cards/100px-King_of_hearts_fr.svg.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imgCarteC2" fitHeight="141.0" fitWidth="95.0" layoutX="232.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/100px-01_of_spades_A.svg.png" />
+            <Image url="@img/100px-01_of_spades_A.svg.pngimg/backa.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imgCarteC3" fitHeight="141.0" fitWidth="95.0" layoutX="260.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/10_of_clubs_-_David_Bellot.svg.png" />
+            <Image url="@img/backa.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgCarteJ3" fitHeight="141.0" fitWidth="95.0" layoutX="252.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteJ3" fitHeight="141.0" fitWidth="95.0" layoutX="260.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cards/back.png" />
          </image>
@@ -82,12 +82,12 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label fx:id="lblMPerdues" layoutX="147.0" layoutY="49.0" prefHeight="26.0" prefWidth="13.0" text="0">
+      <Label fx:id="lblMPerdues" layoutX="147.0" layoutY="49.0" prefHeight="26.0" prefWidth="47.0" text="0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblMGagnees" layoutX="141.0" layoutY="261.0" prefHeight="26.0" prefWidth="13.0" text="0">
+      <Label fx:id="lblMGagnees" layoutX="141.0" layoutY="261.0" prefHeight="26.0" prefWidth="40.0" text="0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -109,11 +109,11 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label fx:id="lblSolde" layoutX="56.0" layoutY="298.0" text="0">
+      <Label fx:id="lblSolde" layoutX="56.0" layoutY="298.0" prefHeight="20.0" prefWidth="61.0" text="300">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label fx:id="lblArgMise" layoutX="526.0" layoutY="449.0" prefHeight="16.0" prefWidth="13.0" text="0">
+      <Label fx:id="lblArgMise" layoutX="526.0" layoutY="449.0" prefHeight="20.0" prefWidth="47.0" text="0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
@@ -143,15 +143,15 @@
          </font></Button>
       <ImageView fx:id="imgCarteC4" fitHeight="141.0" fitWidth="95.0" layoutX="293.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/10_of_clubs_-_David_Bellot.svg.png" />
+            <Image url="@img/backa.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imgCarteC5" fitHeight="141.0" fitWidth="95.0" layoutX="327.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/10_of_clubs_-_David_Bellot.svg.png" />
+            <Image url="@img/backa.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgCarteJ4" fitHeight="141.0" fitWidth="95.0" layoutX="292.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCarteJ4" fitHeight="141.0" fitWidth="95.0" layoutX="293.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cards/back.png" />
          </image>
@@ -161,5 +161,6 @@
             <Image url="@cards/back.png" />
          </image>
       </ImageView>
+      <Label fx:id="lblInfo" layoutX="255.0" layoutY="437.0" prefHeight="44.0" prefWidth="124.0" text="Misez et tirez les cartes" textAlignment="CENTER" wrapText="true" />
    </children>
 </Pane>
